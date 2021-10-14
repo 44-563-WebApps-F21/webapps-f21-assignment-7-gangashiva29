@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html> 
+		<head>
+			<title>Stack Page</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			<style>
+				header {
+					color: red;
+					font-family: 'Times New Roman', Times, serif;
+					font-size: xx-large;
+					text-shadow: 2px 2px 4px #000000;
+					filter: blur(0.1px);
+				}
+		
+				p {
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: medium;
+				}
+		
+				.flex-container {
+					display: flex;
+					flex-direction: row;
+					background-color: #A569BD;
+				}
+		
+				.flex-container>div {
+					/*div children of the flex container*/
+					background-color: #f1f1f1;
+					margin: 10px;
+					padding: 20px;
+					font-size: 30px;
+				}
+		
+				/* Responsive layout */
+				@media (max-width: 600px) {
+					.flex-container {
+						flex-direction: column;
+						background-color: green;
+					}
+				}
+			</style>
+		</head>
+		
+		<body>
+			<header>Shibva Kumar Ganga builds a stack</header>
+			<br>
+			<input type="text" class="form-control" id="form_input" name="inputElement" style="width: 20%;">
+			<br>
+			<p> Press the button to create an new element of type div and then add it to the container.</p>
+			<button type="button" class="btn btn-primary" onclick="makeNewDiv()">Push value</button>
+			
+			<br>
+			<br>
+			<div class="flex-container" id="target">
+				<div class="stack">row item 1</div>
+				<div class="stack">row item 2</div>
+				<div class="stack">row item 3</div>
+			</div>
+		
+			<script>
+				function makeNewDiv() {
+					/* make the div and its text */
+					let element = document.createElement("div")
+					value = document.getElementById("form_input").value
+					element.innerHTML = value
+					element.className = "stack"
+					/* add it to the container */
+					document.getElementById('target').appendChild(element)
+				}
+				
+				
+							
+			</script>
+				
+			</body>
+</html>	
